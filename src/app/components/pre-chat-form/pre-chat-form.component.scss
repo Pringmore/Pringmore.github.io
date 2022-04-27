@@ -1,0 +1,118 @@
+.close-dialog-btn {
+    position: absolute;
+    right: 1.5em;
+    top: 1.5em;
+
+    mat-icon {
+        font-size: 2em;
+    }
+
+    button {
+        border: 0;
+        background-color: transparent;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.dialog-content {
+    header {
+        margin-bottom: 6em;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+    form {
+        margin: 0.5em;
+        padding: 0.5em 1em 1em;
+        border-radius: 4px;
+    
+        mat-divider {
+            opacity: 0;
+        }
+        
+        .two-fields {
+            display: flex;
+            justify-content: space-between;
+        
+            &.questionnaire {
+                height: 2em;
+                padding: 1em 0;
+
+                .select-container {
+                    margin-top: -.5em;
+                }
+            }
+        }
+
+        .half-line {
+            width: 45%;
+
+            mat-radio-group {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        }
+
+        .questionnaire-title {
+            margin-top: 2em;
+        }
+
+
+
+        .questionnaire-divider {
+            border-bottom: 1px solid #ebebeb;
+        }
+        
+        .button-container {
+            margin-top: 2em;
+    
+            button {
+                width: 100%;
+                color: white;
+                background-color: #c77f06;
+
+                &.mat-button-disabled {
+                    opacity: .5;
+                }
+            }
+        }
+    }
+}
+
+.mat-form-field-infix {
+    border: 0;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle {
+	background-color: #c77f06; 
+}
+
+::ng-deep .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+	border-color: #c77f06; 
+}
+
+::ng-deep mat-option.mat-selected .mat-option-text {
+    color: #c77f06;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background{
+    background-color: #c77f06; 
+}
+
+::ng-deep .mat-pseudo-checkbox.mat-option-pseudo-checkbox.ng-star-inserted.mat-pseudo-checkbox-checked{
+    background-color: #c77f06; 
+}
+
+::ng-deep .cdk-overlay-dark-backdrop {
+    background: rgba(255, 255, 255, 0.95);   
+}
+
+::ng-deep .mat-dialog-container {
+    background: rgba(255, 255, 255, .1);
+    box-shadow: none;
+}

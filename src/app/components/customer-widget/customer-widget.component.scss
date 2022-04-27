@@ -1,0 +1,86 @@
+#customer-chat-container {
+ font-family: 'Roboto Condensed', sans-serif;
+ position: absolute;
+ top: 60px;
+ right: 0;   
+ min-height: 60px;
+ width: 400px;
+
+    mat-expansion-panel-header {
+        padding: .5em 1.5em .5em .5em;
+
+        &.mat-expanded {
+            padding: 0 1.5em 0 .5em;
+        }
+
+        .icon-container {
+            height: 3em;
+            width: 3em;
+            position: relative;
+
+            mat-icon.agent-avatar.offline {
+                font-size: 3em;
+            }
+
+            .agent-avatar.online {
+                height: 40px;
+                width: 40px;
+                border-radius: 40px;
+                border: 1px solid #e5e5e5;
+            }
+
+            .online-indicator {
+                position: absolute;
+                top: 4px;
+                right: 2px;
+                height: 10px;
+                width: 10px;
+                border-radius: 10px;
+                background-color: #037a21;
+            }
+        }
+
+        .agent-name-container {
+            margin-left: .5em;
+
+            p {
+                margin: 0;
+                line-height: .9em;
+
+                span.agent-name {
+                    font-size: .85em;
+                    opacity: .7;
+                }
+            }
+        }
+    }
+
+    mat-expansion-panel.mat-expanded {
+        section.chat-history-area {
+            border-top: 1px solid #dddddd;
+            height: 15em;
+            margin: 0 -24px;
+            padding: 1em;
+            background-image: linear-gradient(-206deg, #ffffff, #ebebeb);
+
+            .queuing-message-container {
+                background-color: #dddddd;
+                border-radius: 14px 14px 14px 0;
+                padding: 10px;
+            }
+
+            button.pre-chat, button.start-chat {
+                width: 100%;
+                background-color: #c77f06;
+                color: white;
+            }
+        }
+
+        section.chat-writing-area {
+            border-top: 1px solid #aaaaaa;
+            height: 8em;
+            margin: 0 -24px -16px -24px;
+        }
+    }
+}
+

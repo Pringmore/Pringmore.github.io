@@ -1,0 +1,112 @@
+<div class="close-dialog-btn">
+    <button mat-dialog-close><mat-icon>close</mat-icon></button>
+</div>
+
+<div class="dialog-content">
+    <header><h1>ASTON MARTIN</h1></header>
+
+    <form [formGroup]="form" (ngSubmit)="setPreChatForm()">
+        <h3>Please fill the following form to start the chat</h3>
+
+        <mat-form-field class="half-line">
+            <mat-label>Title</mat-label>
+            <mat-select>
+            <mat-option value="option1">Mr</mat-option>
+            <mat-option value="option2">Mrs</mat-option>
+            <mat-option value="option3">Other</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-divider></mat-divider>
+
+        <div class="two-fields">
+            <mat-form-field class="half-line">
+                <input type="text" matInput placeholder="First Name" formControlName="firstname">
+                <mat-error *ngIf="firstname.touched && firstname.hasError('required')">Firstname is required</mat-error>
+            </mat-form-field>
+        
+            <mat-form-field class="half-line">
+                <input type="text" matInput placeholder="Last Name" formControlName="lastname">
+                <mat-error *ngIf="lastname.touched && lastname.hasError('required')">Lastname is required</mat-error>
+            </mat-form-field>
+        </div>
+
+        <mat-divider></mat-divider>
+
+        <mat-form-field class="half-line">
+        <input type="email" matInput placeholder="Customer Email" formControlName="email">
+        <mat-error *ngIf="email.touched && email.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="email.touched && email.hasError('email')">Email must be valid</mat-error>
+        </mat-form-field>
+        
+        <mat-divider></mat-divider>
+
+        <h3 class="questionnaire-title">Please select an answer to each question</h3>
+
+        <div class="questionnaire-divider"></div>
+
+        <div class="two-fields questionnaire">
+            <div class="half-line">
+                <p>Do you already own an Aston Martin?</p>
+            </div>
+
+            <div class="half-line">
+            <mat-radio-group aria-label="Select an answer">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+            </mat-radio-group>
+            </div>
+        </div>
+
+        <div class="questionnaire-divider"></div>
+
+        <div class="two-fields questionnaire">
+            <div class="half-line">
+                <p>Are you planning to buy an Aston Martin?</p>
+            </div>
+
+            <div class="half-line">
+            <mat-radio-group aria-label="Select an answer">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2">No</mat-radio-button>
+            </mat-radio-group>
+            </div>
+        </div>
+        
+        <div class="questionnaire-divider"></div>
+
+        <div class="two-fields questionnaire">
+            <div class="half-line">
+                <p>Select your favorite models</p>
+            </div>
+
+            
+            <mat-form-field class="half-line select-container">
+                <mat-label>Models</mat-label>
+                <mat-select multiple>
+                    <mat-option value="model1">DB</mat-option>
+                    <mat-option value="model2">DB7</mat-option>
+                    <mat-option value="model3">DB11</mat-option>
+                    <mat-option value="model4">DB9</mat-option>
+                    <mat-option value="model5">DBS</mat-option>
+                    <mat-option value="model6">DBX</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        
+        <div class="questionnaire-divider"></div>
+        
+        <mat-checkbox
+            class="terms-checkbox"
+            labelPosition="after"
+            formControlName="termsAccepted"
+            [checked]="termsAcceptedValue"
+        >
+            I agree to to the terms and conditions of use.
+        </mat-checkbox>
+
+        <div class="button-container">
+            <button class="pre-chat" mat-stroked-button type="submit" [disabled]="!form.valid">Submit & enter expert session</button>
+        </div>
+    </form>
+</div>

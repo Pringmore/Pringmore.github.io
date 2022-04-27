@@ -1,0 +1,31 @@
+<div id="customer-chat-container">
+    <mat-expansion-panel>
+        <mat-expansion-panel-header id="rectangle-chat">
+          <mat-panel-title>
+            <div class="icon-container">
+                <mat-icon *ngIf="!agentIsOnline" class="agent-avatar offline">smart_toy</mat-icon> 
+                
+                <img *ngIf="agentIsOnline" class="agent-avatar online" alt="agent-photo" [src]="agentProfilePhoto" />
+                <div *ngIf="agentIsOnline" class="online-indicator" alt="agent-photo"></div>
+            </div>
+            <div class="agent-name-container">
+                <p><span class="widget-title">Your personal concierge</span></p>
+                <p *ngIf="agentIsOnline"><span class="agent-name">Talking to {{ agentName }}</span></p>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>  
+
+        <section class="chat-history-area">
+          <div *ngIf="allowChat && !agentIsOnline" class="queuing-message-container">
+            <p>Thank you! Your message has been sent. Our support team will contact you soon.</p>
+          </div>  
+
+          <button *ngIf="allowChat && agentIsOnline" class="start-chat" mat-flat-button (click)="openChat()"> Start chat</button>
+          <button *ngIf="!allowChat" class="pre-chat" mat-flat-button (click)="openPreChat()"> Fill the Pre-chat form</button>
+        </section>
+        
+        <section class="chat-writing-area"></section>
+            
+    </mat-expansion-panel>
+    
+</div>
